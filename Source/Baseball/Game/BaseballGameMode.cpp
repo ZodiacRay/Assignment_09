@@ -202,20 +202,22 @@ void ABaseballGameMode::ReceiveGuess(ABaseballPlayerController* Sender, const FS
 			TEXT("System"), TEXT("잘못된 입력입니다. 다시 입력하세요."), 
 			FLinearColor::Yellow
 		);
+		
+		return; 
 	}
 	
 	CurrentTurnPlayerState->LeftChance--; 
-	BroadcastMessage(Sender->PlayerState->GetPlayerName(), GuessNumber, FLinearColor::Gray);
-	SendMessageToClient(
-		Sender,
-		TEXT("System"), 
-		TEXT("승리!!!"), 
-		FLinearColor::Yellow
-		);
-	
 	
 	if (JudgeGuessNumber(GuessNumber))
 	{
+		BroadcastMessage(Sender->PlayerState->GetPlayerName(), GuessNumber, FLinearColor::Gray);
+		SendMessageToClient(
+			Sender,
+			TEXT("System"), 
+			TEXT("승리!!!"), 
+			FLinearColor::Yellow
+		);
+		
 		for (auto Player : PlayerList)
 		{
 			if (Player != Sender)
