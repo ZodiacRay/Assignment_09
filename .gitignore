@@ -1,5 +1,22 @@
-# Visual Studio 2015 user specific files
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+*.log
+*.tmp
+
+.DS_Store
+
+# Visual Studio cache
 .vs/
+*.ipch
+.vscode/
+
+# Idea
+.idea/
+Plugins/
 
 # Compiled Object files
 *.slo
@@ -39,7 +56,7 @@
 *.opensdf
 *.sdf
 *.VC.db
-*.VC.opendb
+*.VC.VC.opendb
 .vsconfig
 
 # Precompiled Assets
